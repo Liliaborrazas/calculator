@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
-import Button from './components/Button';
+import Button from './components/button/Button';
 import Functions from './components/Functions';
 import MathOperations from './components/MathOperations';
+import Numbers from './components/Numbers'
 import Result from './components/Result'
 
 const App =()=> {
@@ -11,7 +12,7 @@ const App =()=> {
       <header >
         <main className="react-calculator">Calculadora App
           <Result value={0}/>
-            <div className="numbers">
+            {/* <div className="numbers">
                <Button text={1} handleClick={ text=>{
                   console.log(`estoy dentro del handle ${text}`)
                }}/>
@@ -24,7 +25,8 @@ const App =()=> {
                 <button>8</button>
                 <button>9</button>
                 <button>0</button>
-            </div>
+            </div> */}
+            <Numbers onClickNumbers={number=>{console.log(`hice click en el : ${number}`)}}/>
             <Functions 
              onContentClear={clear=>{console.log(`clear :${clear}`)}}
              onDelete={del=>{console.log(`Delete:${del}`)}}/>
