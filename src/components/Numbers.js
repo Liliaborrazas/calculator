@@ -1,19 +1,21 @@
 import React from 'react';
 import Button from './button/Button';
 
-const Numbers = ({onClickNumbers}) => {
+const numbers = [1,2,3,4,5,6,7,8,9,0]
+
+const renderButtons = onClickNumber => {
+    //iterar desde el botón 1 al 0
+    //<Button text={number.toString()} handleClick={onClickNumbers}/>
+    const renderButton = number => (
+        <Button text={number.toString()} handleClick={onClickNumber}/>
+    )
+    return numbers.map(renderButton)
+}
+
+const Numbers = ({onClickNumber}) => {
     return(
         <div className="numbers">
-        <Button text={1} handleClick={onClickNumbers}/>
-        <Button text={2} handleClick={onClickNumbers}/>
-        <Button text={3} handleClick={onClickNumbers}/>
-        <Button text={4} handleClick={onClickNumbers}/>
-        <Button text={5} handleClick={onClickNumbers}/>
-        <Button text={6} handleClick={onClickNumbers}/>
-        <Button text={7} handleClick={onClickNumbers}/>
-        <Button text={8} handleClick={onClickNumbers}/>
-        <Button text={9} handleClick={onClickNumbers}/>
-        <Button text={0} handleClick={onClickNumbers}/>
+       {renderButtons(onClickNumber)}
      </div>
     )
 }
