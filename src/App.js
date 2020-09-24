@@ -13,7 +13,7 @@ const App =()=> {
         <main className="react-calculator">Calculadora App
           <Result value={stack}/>
             <Numbers onClickNumber={number=>{console.log(`hice click en el : ${number}`)
-          setStack(number)
+          setStack(stack + number)
           }}/>
             <Functions 
              onContentClear={clear=>{console.log(`clear :${clear}`)}}
