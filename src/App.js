@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Functions from './components/Functions';
 import MathOperations from './components/MathOperations';
@@ -6,12 +6,15 @@ import Numbers from './components/Numbers'
 import Result from './components/Result'
 
 const App =()=> {
+  const [stack, setStack ] = useState("")
   return (
     <div className="App">
       <header >
         <main className="react-calculator">Calculadora App
-          <Result value={0}/>
-            <Numbers onClickNumber={number=>{console.log(`hice click en el : ${number}`)}}/>
+          <Result value={stack}/>
+            <Numbers onClickNumber={number=>{console.log(`hice click en el : ${number}`)
+          setStack(number)
+          }}/>
             <Functions 
              onContentClear={clear=>{console.log(`clear :${clear}`)}}
              onDelete={del=>{console.log(`Delete:${del}`)}}/>
