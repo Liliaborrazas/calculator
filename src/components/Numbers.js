@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './button/Button';
 
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const numbers = [7,8,9,4,5,6,1,2,3,0];
 
 const renderButtons = onClickNumber => {
     const renderButton = number => (

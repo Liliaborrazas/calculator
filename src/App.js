@@ -24,28 +24,26 @@ const App =()=> {
       <header >
         <main className="react-calculator">Calculadora App
           <Result value={value}/>
-            <Numbers onClickNumber={number=>{console.log(`hice click en el : ${number}`)
-          setStack(`${stack}${number}`)
-          }}/>
+            <Numbers onClickNumber={number=>
+              setStack(`${stack}${number}`)
+             }/>
             <Functions 
-              onContentClear={clear=>{
-                  console.log(`clear :${clear}`)
+              onContentClear={clear=>
                   setStack("")
-              }}
+              }
              onDelete={del=>{
                 if(stack.length > 0){ 
                     const newStack = stack.substring(0, stack.length -1)
-                    console.log(`Delete:${newStack}`)
                     setStack(newStack)
                 } 
              }}/>
             <MathOperations 
-            onClickOperations={operations =>{console.log(`Soy el parametro o sea el texto del btn q haces click soy: ${operations}`)
+            onClickOperations={operations =>
             setStack(`${stack}${operations}`)
-          }}
-            onClickEqual={equal =>{console.log(`Soy el paramentro equal definido en MathOpertion si haces click te pintara:${equal}`)
+          }
+            onClickEqual={equal =>
             setStack(eval(stack))
-          }}
+          }
             />
             </main>
       </header>
